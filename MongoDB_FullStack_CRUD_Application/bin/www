@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../server');
 var debug = require('debug')('mongodb-fullstack-crud-application:server');
 var http = require('http');
 
