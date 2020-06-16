@@ -29,7 +29,7 @@ function login(req, res, next){
         if (isMatch) {
           req.logIn(user, function (err) {
             if (err) return next(err);
-            return res.redirect('/');
+            return res.redirect('/songslist');
           });
         }
         // could change to redirect back to form with error message

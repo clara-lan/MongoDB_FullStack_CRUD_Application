@@ -13,21 +13,24 @@
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"">
-      <h1 class="display-4">My Song List</h1>
+    <div id="add-song-title">
+      <h3> <a href='/newsong' >Add Your Own Song</a> </h3>
+    </div>
       <!-- list out songs -->
-      
-      <!-- <section id="songs-list">
-      <% myMovies.forEach(movie => { %>      
-        <div class="card m-1" id="movie-<%= movie._id %>">
-          <img src="<%= movie.img %>" class="card-img-top" alt="<%= movie.title %>">
-          <div class="card-body">
-            <h5 class="card-title"><%= movie.title %></h5>
-            <button data-id="${movie._id}" class="btn btn-danger">Remove</button>
-          </div>
-        </div>
-      <% }) %>
-      </section> -->
+        <section id="songs-list">
+            <% mySongs.forEach(song => { %>      
+              <div class="card m-1" id="song-<%= song._id %>">
+                <!-- <img src="<%= song.img %>" class="card-img-top" alt="<%= song.title %>"> -->
+                <div class="card-body">
+                  <h5 class="card-title"><%= song.title %></h5>
+                  <div><%= song.artist%></div>
+                  <div><%= song.album%></div>
+                  <div><%= song.published%></div>
+                  <button data-id="${song._id}" class="btn btn-danger">Remove</button>
+                </div>
+              </div>
+            <% }) %>
+          </section>
     </div>
   </body>
 </html>

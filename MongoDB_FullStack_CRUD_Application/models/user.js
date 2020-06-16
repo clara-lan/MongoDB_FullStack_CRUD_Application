@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
     type:String,
     select:false
   },
+  songs:[{ type: mongoose.Schema.Types.ObjectId, ref: 'MySong' }]
  }, {
   timestamps:true,
   runSettersOnQuery:true// in order to exec "findByIdAndRemove".ect, this prop should be true

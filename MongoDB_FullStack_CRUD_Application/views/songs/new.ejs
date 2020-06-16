@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Songs List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"">
+      <h1 class="display-4">My Song List</h1>
+        <div>
+          <h3>Add Your Own Song</h3>
+          <form id="add-songs-form" method="POST" 
+            action='/newsong'>
+            <label>Title:</label>
+            <input name="title">
+            <label>Artist:</label>
+            <input name="artist">
+            <label>Album:</label>
+            <input name="album">
+            <label>Genre:</label>
+            <select name="genre">
+              <option value="classic">CLASSIC</option>
+              <option value="jazz">JAZZ</option>
+              <option value="pop">POP</option>
+              <option value="rock">ROCK</option>
+              <option value="nogenre">WHO KNOWS</option>
+            </select>
+            <label>Published At:</label>
+            <input type="number" min="1900" max="9999" step="1" value="2020" />
+            <input type="submit" value="ADD THIS SONG">
+          </form>
+        </div>
+    </div>
+  </body>
+</html>

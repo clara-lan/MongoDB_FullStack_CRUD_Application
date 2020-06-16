@@ -9,3 +9,26 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
+
+#songs-reminder {
+  margin-top:2rem;
+}
+
+#add-songs-form {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
+
+#add-songs-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin: auto;
+}
+
+#add-song-title {
+  margin-left: 40%;
+}
