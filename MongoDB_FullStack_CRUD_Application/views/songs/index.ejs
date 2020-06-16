@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Songs List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"">
+      <h1 class="display-4">My Song List</h1>
+      <!-- list out songs -->
+      
+      <!-- <section id="songs-list">
+      <% myMovies.forEach(movie => { %>      
+        <div class="card m-1" id="movie-<%= movie._id %>">
+          <img src="<%= movie.img %>" class="card-img-top" alt="<%= movie.title %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+            <button data-id="${movie._id}" class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+      <% }) %>
+      </section> -->
+    </div>
+  </body>
+</html>

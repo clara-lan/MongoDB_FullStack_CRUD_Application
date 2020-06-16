@@ -1,0 +1,11 @@
+.heading {
+  max-width: 700px;
+}
+
+#songs-list {
+  max-width: 800px;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
