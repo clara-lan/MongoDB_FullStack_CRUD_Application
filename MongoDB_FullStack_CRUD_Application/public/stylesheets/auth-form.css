@@ -20,6 +20,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  margin-bottom: -50px;
 }
 
 .auth-form input[type="email"] {
@@ -40,4 +41,8 @@ body {
   height: auto;
   padding: 10px;
   font-size: 16px;
+}
+
+.signin-fb{
+  margin-bottom: 20%;
 }

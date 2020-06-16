@@ -7,6 +7,7 @@ const router = require('./router'); // import router file
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
+const authRouter = require('./routes/authRouter');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -46,7 +47,8 @@ app.use(function(req,res, next){
   next();
 });
 
-app.use(router);
+app.use('/', router);
+app.use('/user', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

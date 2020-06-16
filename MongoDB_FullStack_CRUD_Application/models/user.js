@@ -1,19 +1,18 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+
 const SALT_ROUNDS = 10;
 
 const userSchema = new mongoose.Schema({
+  facebookID:String,
   email:{
     type:String,
-    required:true,
-    lowercase:true,
     unique:true
   },
   password:{
     type:String,
     select:false
   },
-  songs:[{ type: mongoose.Schema.Types.ObjectId, ref: 'MySong' }]
  }, {
   timestamps:true,
   runSettersOnQuery:true// in order to exec "findByIdAndRemove".ect, this prop should be true
