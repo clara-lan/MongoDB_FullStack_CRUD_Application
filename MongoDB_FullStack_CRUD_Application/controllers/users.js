@@ -1,7 +1,16 @@
+const passport = require('passport');
 const User = require('../models/user');
 
 module.exports ={
-  login
+  loginForm,
+  login,
+  signup,
+  signupForm,
+  logout,
+}
+
+function loginForm(req, res) {
+  res.render('users/login', { heading: 'Please Login', postUrl: '/login', btnText: 'Sign In', user:req.user });
 }
 
 function login(req, res, next){ 
@@ -27,4 +36,34 @@ function login(req, res, next){
         return next(Error('Invalid Credentials'));
       });
     });
+}
+
+function signupForm(req, res) {
+  res.render('users/signup', {
+    heading: 'Please Sign Up',
+    postUrl: '/signup',
+    btnText: 'Sign Up',
+  });
+}
+
+async function signup(req, res, next) {
+  // validate strong password
+  let user = new User(req.body);
+  try {
+    user = await user.save();
+    req.logIn(user, function (err) { // passport offers req.login function
+      if (err) {
+        return next(err);
+      }
+      return res.redirect('/');
+    });
+  } catch (err) {
+    // Probably a duplicate email, could change to redirect back to form with error message
+    next(err);
+  }
+}
+
+function logout(req, res) {
+  req.logout(); // passport contains operations like req.sign && req.logout 
+  res.redirect('/');
 }

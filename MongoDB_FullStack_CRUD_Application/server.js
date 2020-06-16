@@ -1,10 +1,12 @@
 require('dotenv').config();
 
 require('./config/database');
+require('./config/passport'); // import to start passport when server runs, also see line 41/42
+
 const router = require('./router'); // import router file
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-
+const passport = require('passport');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -14,7 +16,7 @@ var logger = require('morgan');
 
 var app = express();
 
-app.use(router);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,10 +38,15 @@ app.use(
   })
 );
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(function(req,res, next){
   res.locals.user = req.user;
   next();
 });
+
+app.use(router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
