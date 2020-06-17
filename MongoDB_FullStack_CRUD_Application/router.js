@@ -3,7 +3,6 @@ const router = express.Router();
 
 //import controllers here:
 const homeCtrl = require('./controllers/home');
-const usersCtrl = require('./controllers/users');
 const songsCtrl = require('./controllers/my-songs');
 
 
