@@ -2,13 +2,13 @@ const express = require('express');
 const passport = require('passport');
 const authRouter = express.Router();
 
-authRouter.get("auth/facebook", passport.authenticate("facebook"));
+authRouter.get("/user/auth/facebook", passport.authenticate("facebook"));
 
 authRouter.get(
-  "auth/facebook/callback",
+  "/user/auth/facebook/callback",
   passport.authenticate("facebook",{
     successRedirect:"/songslist",
-    faliureRedirect:"/login"
+    faliureRedirect:"/"
   })
 );
 

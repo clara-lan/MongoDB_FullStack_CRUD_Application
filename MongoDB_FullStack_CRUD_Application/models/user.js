@@ -5,14 +5,6 @@ const SALT_ROUNDS = 10;
 
 const userSchema = new mongoose.Schema({
   facebookID:String,
-  email:{
-    type:String,
-    unique:true
-  },
-  password:{
-    type:String,
-    select:false
-  },
  }, {
   timestamps:true,
   runSettersOnQuery:true// in order to exec "findByIdAndRemove".ect, this prop should be true
