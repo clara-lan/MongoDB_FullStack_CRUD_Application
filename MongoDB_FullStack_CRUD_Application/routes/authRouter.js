@@ -12,12 +12,12 @@ authRouter.get(
   })
 );
 
-authRouter.get("/fail",(req, res)=>{
-  res.send("Failed Attempt");
-});
+// authRouter.get("/fail",(req, res)=>{
+//   res.send("Failed Attempt");
+// });
 
-authRouter.get("/", (req,res)=>{
-  res.redirect("/songslist");
-});
+// authRouter.get("/", (req,res)=>{
+//   res.redirect("/songslist");
+// });
 
 module.exports=authRouter;
