@@ -23,11 +23,11 @@ passport.use(
   async (accessToken, refreshToken, profile, done) => {
     const existingUser = await User.findOne({ "facebookID":profile.id });
     if(existingUser){
-      return (done, existingUser);
-    }
+      return done(null, existingUser);
+    }else{
     const user = await new User({ "facebookID":profile.id }).save();
-    done(null, user);
-  }
+    return done(null, user);
+  }}
 ));
 
 
