@@ -11,12 +11,13 @@
 
     <link rel="stylesheet" href="/stylesheets/home.css" />
   </head>
-  <body>
+  <body class="body-container">
     <%- include('../partials/navbar') %>
     <div id="add-song-title">
-      <h3> <a href='/newsong' >Add Your Own Song</a> </h3>
+      <h3> <a href='/newsong' >Click to add your own song</a> </h3>
     </div>
       <!-- list out songs -->
+        <% if(mySongs.length) { %>
         <section id="songs-list">
             <% mySongs.forEach(song => { %>  
               <form action="/songslist?_method=DELETE" method="POST">
@@ -33,6 +34,11 @@
             </form>
             <% }) %>
           </section>
+          <% } else{ %>
+            <div id="emptylist">
+              <h3>No Loved Song Yet.</h3>
+            </div>
+          <% } %>
     </div>
   </body>
 </html>

@@ -11,15 +11,15 @@
 
     <link rel="stylesheet" href="/stylesheets/home.css" />
   </head>
-  <body>
+  <body class="body-container">
     <%- include('partials/navbar') %>
     <form id="search-form" class="heading px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
-          placeholder="Search songs..."
-          aria-label="Search songs..."
+          placeholder="Search to add a song"
+          aria-label="Search to add a song"
           aria-describedby="search-btn"
         />
         <div class="input-group-append">
@@ -27,7 +27,5 @@
         </div>
       </div>
     </form>
-
-    <section id="songs-list"></section>
   </body>
 </html>
