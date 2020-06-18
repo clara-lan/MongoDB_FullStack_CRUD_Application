@@ -8,6 +8,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const authRouter = require('./routes/authRouter');
+const methodOverride = require('method-override');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.unsubscribe(router);
+app.use(methodOverride('_method'))
 
 app.use(
   session({

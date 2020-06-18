@@ -8,7 +8,7 @@ const mySongSchema = new mongoose.Schema(
     published : { type: Number },
     img: { type: String },
     genre:{ type: String },
-    user: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],// reference user as an array
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },// reference user
   },
   {
     timestamps: true,

@@ -19,6 +19,7 @@ passport.use(
     clientID:process.env.FB_ID,
     clientSecret:process.env.FB_SECRET,
     callbackURL:process.env.FB_URL,
+    profileFields:['id', 'displayName', 'email'],
   },
   async (accessToken, refreshToken, profile, done) => {
     const existingUser = await User.findOne({ "facebookID":profile.id });

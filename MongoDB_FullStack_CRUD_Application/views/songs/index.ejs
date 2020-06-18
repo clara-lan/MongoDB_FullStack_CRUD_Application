@@ -18,17 +18,19 @@
     </div>
       <!-- list out songs -->
         <section id="songs-list">
-            <% mySongs.forEach(song => { %>      
-              <div class="card m-1" id="song-<%= song._id %>">
-                <!-- <img src="<%= song.img %>" class="card-img-top" alt="<%= song.title %>"> -->
-                <div class="card-body">
-                  <h5 class="card-title"><%= song.title %></h5>
-                  <div><%= song.artist%></div>
-                  <div><%= song.album%></div>
-                  <div><%= song.published%></div>
-                  <button data-id="${song._id}" class="btn btn-danger">Remove</button>
+            <% mySongs.forEach(song => { %>  
+              <form action="/songslist?_method=DELETE" method="POST">
+                <div class="card m-1" id="song-<%= song._id %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= song.title %></h5>
+                    <div><%= song.artist%></div>
+                    <div><%= song.album%></div>
+                    <div><%= song.published%></div>
+                    <input type="hidden" name="id" value="<%= song._id %>" />
+                    <button type="submit">Remove</button>
+                  </div>
                 </div>
-              </div>
+            </form>
             <% }) %>
           </section>
     </div>
