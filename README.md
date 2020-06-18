@@ -16,6 +16,5 @@ This is a web application which enables user to login with Facebook account and 
 - Trello board: https://trello.com/b/uxFpUvSu/ga-schedule
 
 ## Next Steps:
-- [] Refactor the router file
-- [] Improve styling
-- [] Apply Spotify API
+- Improve styling
+- Apply Spotify API

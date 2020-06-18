@@ -3,7 +3,7 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport'); // import to start passport when server runs, also see line 41/42
 
-const router = require('./router'); // import router file
+const router = require('./routes/router'); // import router file
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
