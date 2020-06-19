@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <link rel="stylesheet" href="/stylesheets/songs-list.css" />
   </head>
   <body class="body-container">
     <%- include('../partials/navbar') %>
@@ -18,22 +18,41 @@
     </div>
       <!-- list out songs -->
         <% if(mySongs.length) { %>
-        <section id="songs-list">
-            <% mySongs.forEach(song => { %>  
+        <div class="table-container">
+        <table id="songs-list">
+          <thead >
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Released at</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% mySongs.forEach(song => { %> 
               <form action="/songslist?_method=DELETE" method="POST">
-                <div class="card m-1" id="song-<%= song._id %>">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= song.title %></h5>
-                    <div><%= song.artist%></div>
-                    <div><%= song.album%></div>
-                    <div><%= song.published%></div>
+                <tr id="song-<%= song._id %>">
+                    <td><h5 ><%= song.title %></h5></td>
+                    <td><%= song.artist%></td>
+                    <td><%= song.album%></td>
+                    <td><%= song.published%></td>
+                    <td>
+                      <img src="../../public/images/like-512.png">
+                      <button class='small-button'>Like</button>
+                    </td>
+                    <td id="likeCount"></td>
+                    <td><button type="submit" class="small-button">Remove</button></td>
                     <input type="hidden" name="id" value="<%= song._id %>" />
-                    <button type="submit">Remove</button>
                   </div>
-                </div>
+                </tr>
             </form>
             <% }) %>
-          </section>
+          </tbody>
+        </table>
+      </div>
           <% } else{ %>
             <div id="emptylist">
               <h3>No Loved Song Yet.</h3>

@@ -1,23 +1,27 @@
+html,
+body {
+	height: 100%;
+}
+
 .heading {
   max-width: 700px;
 }
 
 .header {
-background-color: #D76D77;
+background:linear-gradient(45deg, #49a09d, #5f2c82);;
 }
 
 .body-container{
-  background-image: url('../images/Relay.jpg');
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
   background-repeat: no-repeat;
 }
 
 #songs-list {
-  max-width: 800px;
+  width: auto;
   margin: 10px auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  background-color: transparent;
 }
+
 
 #add-songs-form {
   font-size: 20px;
@@ -40,8 +44,29 @@ background-color: #D76D77;
   text-align: center;
 }
 
+#detail-link {
+  margin-left: 40%;
+  color:rgba(51,93,159, 0.8);
+  font-weight: 700;
+}
+
 #emptylist {
   display: block;
   text-align: center;
   color:white;
+}
+
+.button {
+  background-color: transparent;
+  color:white;
+  border-radius: 20px;
+  box-shadow: inset 1px 1px 20px 2px;
+  padding: 0.5rem;
+  border:none;
+}
+
+.small-button {
+  border-radius: 12px;
+  background-color: transparent;
+  padding: 0.25rem;
 }

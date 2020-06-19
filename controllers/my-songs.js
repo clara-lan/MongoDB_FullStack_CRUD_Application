@@ -5,6 +5,7 @@ module.exports ={
   create,
   addForm,
   deleteOne,
+  show,
 };
 
 async function index(req, res, next) {
@@ -41,4 +42,8 @@ function addForm(req, res){
     catch(err){
       next(err);
     }
+  }
+
+  function show(req, res){
+    res.render('songs/detail');
   }

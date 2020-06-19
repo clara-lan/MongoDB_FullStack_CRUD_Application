@@ -1,7 +1,7 @@
 # Mongo_FullStack_CRUD_Application
 This is a web application which enables user to login with Facebook account and manage their list favorite songs.
 ## App View:
-![list page view](./public/images/listpage.png)
+![list page view](./public/images/homepage.png)
 
 ## Technologies Used:
 - MongoDB and MongoDB Altas

@@ -8,6 +8,8 @@ const mySongSchema = new mongoose.Schema(
     published : { type: Number },
     img: { type: String },
     genre:{ type: String },
+    like:{ type:Number },
+    dislike:{ type:Number },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },// reference user
   },
   {
