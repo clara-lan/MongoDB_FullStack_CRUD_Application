@@ -8,7 +8,7 @@ const mySongSchema = new mongoose.Schema(
     published : { type: Number },
     img: { type: String },
     genre:{ type: String },
-    like:{ type:Number },
+    like:{ type:Number, default:0 },
     dislike:{ type:Number },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },// reference user
   },

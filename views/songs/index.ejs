@@ -28,27 +28,30 @@
             <th>Released at</th>
             <th></th>
             <th></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
             <% mySongs.forEach(song => { %> 
-              <form action="/songslist?_method=DELETE" method="POST">
                 <tr id="song-<%= song._id %>">
                     <td><h5 ><%= song.title %></h5></td>
                     <td><%= song.artist%></td>
                     <td><%= song.album%></td>
                     <td><%= song.published%></td>
-                    <td>
-                      <img src="/images/like-512.png" width='20' height='20'>
-                      <button class='small-button'>Like</button>
-                    </td>
-                    <td id="likeCount"></td>
-                    <td><button type="submit" class="small-button">Remove</button></td>
-                    <input type="hidden" name="id" value="<%= song._id %>" />
+                    <form action="/songslist" method="POST">
+                      <td>
+                        <img src="/images/like-512.png" width='25' height='25'>
+                        <button class='small-button' style="background-color: transparent;border-radius: 20px;">Like:<%= song.like %></button>
+                        <input type="hidden" name="id" value="<%= song._id %>" />
+                      </td>
+                    </form>
+
+                    <form action="/songslist?_method=DELETE" method="POST">
+                      <td><button type="submit" class="small-button" style="background-color: transparent;border-radius: 20px;">Remove</button></td>
+                      <input type="hidden" name="id" value="<%= song._id %>" />
+                    </form>
                   </div>
                 </tr>
-            </form>
+         
             <% }) %>
           </tbody>
         </table>

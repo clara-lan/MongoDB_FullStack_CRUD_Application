@@ -5,6 +5,7 @@ module.exports ={
   create,
   addForm,
   deleteOne,
+  updateLike,
 };
 
 async function index(req, res, next) {
@@ -44,6 +45,18 @@ function addForm(req, res){
     res.redirect('/songslist');
     }
     catch(err){
+      next(err);
+    }
+  }
+
+  async function updateLike(req, res, next){
+    try{
+      const song = await MySong.findByIdAndUpdate(
+        {_id:req.body.id},
+        {$inc : {'like' : 1}});
+        console.log(song.like);
+        res.redirect('/songslist');
+    }catch(err){
       next(err);
     }
   }

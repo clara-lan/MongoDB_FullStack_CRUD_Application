@@ -14,7 +14,7 @@ router.get('/songslist', songsCtrl.index);
 router.get('/newsong',songsCtrl.addForm);
 router.post('/newsong',songsCtrl.create);
 router.delete('/songslist', isLoggedIn, songsCtrl.deleteOne);
-
+router.post('/songslist', isLoggedIn, songsCtrl.updateLike);
 
 
 module.exports = router;
