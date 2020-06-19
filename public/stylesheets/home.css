@@ -16,6 +16,7 @@ background:linear-gradient(45deg, #49a09d, #5f2c82);;
   background-repeat: no-repeat;
 }
 
+
 #songs-list {
   width: auto;
   margin: 10px auto;
@@ -69,4 +70,8 @@ background:linear-gradient(45deg, #49a09d, #5f2c82);;
   border-radius: 12px;
   background-color: transparent;
   padding: 0.25rem;
+}
+
+#btn-login{
+  background-color: #1877F2;
 }

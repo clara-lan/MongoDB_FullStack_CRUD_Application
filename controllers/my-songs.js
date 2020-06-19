@@ -5,14 +5,18 @@ module.exports ={
   create,
   addForm,
   deleteOne,
-  show,
 };
 
 async function index(req, res, next) {
   try {
     const mySongs = await MySong.find({});
     console.log("loggedin user:", req.user);
-    res.render('songs/index', { mySongs });
+    if(!req.user){
+      res.redirect('/'); // add alert to remind login
+    }
+    else{
+      res.render('songs/index', { mySongs });
+    }
   } catch (err) {
     next(err);
   }
@@ -42,8 +46,4 @@ function addForm(req, res){
     catch(err){
       next(err);
     }
-  }
-
-  function show(req, res){
-    res.render('songs/detail');
   }
