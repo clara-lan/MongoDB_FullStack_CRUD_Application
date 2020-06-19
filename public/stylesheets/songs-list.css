@@ -46,3 +46,8 @@ td {
 th {
 	text-align: left;
 }
+
+#small-button{
+  background-color: transparent;
+  border-radius: 20px;
+}

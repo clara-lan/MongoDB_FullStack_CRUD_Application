@@ -1,7 +1,7 @@
 <div
   class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-#D76D77 shadow-ml"
 >
-  <h5 class="my-0 mr-md-auto text-light font-weight-normal">Songs List</h5>
+  <h5 class="my-0 mr-md-auto font-weight-normal text-light">Songs List</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-light" href="/">Search Songs</a>
     <a class="p-2 text-light" href="/songslist">My Songs</a>
@@ -11,6 +11,10 @@
   <% } else { %>
   </nav>  
   <!-- <a class="btn btn-outline-primary mr-md-2" href="/login">Login</a> -->
-  <a class="btn btn-outline-primary mr-md-2" href="/user/auth/facebook">Login With Facebook</a>
+
+  <a class="btn btn-outline-primary mr-md-2" id="btn-login" href="/user/auth/facebook">
+    <img src="/images/f_logo.png" alt="fb icon" width="30" height="30">
+    Log in with Facebook
+  </a>
   <% } %>
 </div>
