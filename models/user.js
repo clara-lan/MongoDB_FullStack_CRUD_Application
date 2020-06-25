@@ -4,7 +4,9 @@ const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 10;
 
 const userSchema = new mongoose.Schema({
-  facebookID:String,
+  facebookID: String,
+  email: String,
+  password: String
  }, {
   timestamps:true,
   runSettersOnQuery:true// in order to exec "findByIdAndRemove".ect, this prop should be true
